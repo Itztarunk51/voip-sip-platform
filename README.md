@@ -1,5 +1,27 @@
-# voip-sip-platform
-Complete VoIP system with Kamailio, Asterisk, RTPengine on AWS
+# 🎙️ VoIP Communication Platform
+
+> A complete SIP-based communication system built from scratch on AWS EC2 with Kamailio, Asterisk, and RTPengine
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Kamailio](https://img.shields.io/badge/Kamailio-6.0-red.svg)](https://kamailio.org)
+[![Asterisk](https://img.shields.io/badge/Asterisk-20.6-blue.svg)](https://asterisk.org)
+[![AWS](https://img.shields.io/badge/AWS-EC2-orange.svg)](https://aws.amazon.com)
+
+---
+
+## 📌 What is this?
+
+I built a **working VoIP phone system** from scratch that handles:
+
+- 📞 SIP registration and authentication
+- 🔀 Call routing between users and agents
+- 🎤 Basic IVR (welcome message)
+- 🔊 Two-way audio with NAT traversal
+- ☁️ Deployment on AWS EC2
+
+**Think of it as your own private phone system in the cloud.**
+
+---
 
 ## 🏗️ Architecture Diagram
 
