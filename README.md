@@ -22,6 +22,19 @@ I built a **working VoIP system** to understand how SIP phones work in the cloud
 
 ---
 
+## 🏗️ Architecture Diagram
+
+```mermaid
+flowchart TD
+    A[Internet] --> B[AWS EC2 Cloud]
+    B --> C[Kamailio :5060<br/>SIP Proxy]
+    C --> D[Asterisk :5062<br/>PBX]
+    D --> E[Agent 3003<br/>Voice Support]
+    D --> F[Agent 3004<br/>Network Support]
+    C <--> G[RTPengine<br/>Media Proxy]
+    C <--> H[(MySQL<br/>Database)]
+
+
 ## ✅ What I Tested
 
 | Test | What I Did | Result |
