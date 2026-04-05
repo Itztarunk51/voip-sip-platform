@@ -1,37 +1,28 @@
-VoIP Communication Platform
-I built a working VoIP phone system from scratch on AWS EC2 using Kamailio, Asterisk, and RTPengine
+# 🎙️ VoIP Communication Platform
 
-License Kamailio Asterisk
+> I built a working VoIP phone system from scratch on AWS EC2 using Kamailio, Asterisk, and RTPengine
 
-🎯 What I Did
-I built a working VoIP system to understand how SIP phones work in the cloud.
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Kamailio](https://img.shields.io/badge/Kamailio-6.0-red.svg)](https://kamailio.org)
+[![Asterisk](https://img.shields.io/badge/Asterisk-20.6-blue.svg)](https://asterisk.org)
 
-What I Configured:
-Kamailio as SIP Proxy (port 5060) - handles registration
-Asterisk as PBX (port 5062) - handles call routing
-RTPengine as Media Proxy - fixes audio issues
-MySQL as database - stores user credentials
-AWS EC2 as cloud server - deployed everything
-🏗️ Architecture Diagram
-Unable to render rich display
+---
 
-Parse error on line 10:
-...br/>Database)]### What I Tested:| Te
----------------------^
-Expecting 'SEMI', 'NEWLINE', 'EOF', 'AMP', 'START_LINK', 'LINK', 'LINK_ID', got 'NODE_STRING'
+## 🎯 What I Did
 
-For more information, see https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams
+I built a **working VoIP system** to understand how SIP phones work in the cloud.
 
-flowchart TD
-    A[Internet] --> B[AWS EC2 Cloud]
-    B --> C[Kamailio :5060<br/>SIP Proxy]
-    C -->|SIP| D[Asterisk :5062<br/>PBX]
-    D --> E[Agent 3003<br/>Voice Support]
-    D --> F[Agent 3004<br/>Network Support]
-    C <--> G[RTPengine<br/>Media Proxy]
-    C <--> H[(MySQL<br/>Database)]
+### What I Configured:
 
-### What I Tested:
+- **Kamailio** as SIP Proxy (port 5060) - handles registration
+- **Asterisk** as PBX (port 5062) - handles call routing
+- **RTPengine** as Media Proxy - fixes audio issues
+- **MySQL** as database - stores user credentials
+- **AWS EC2** as cloud server - deployed everything
+
+---
+
+## ✅ What I Tested
 
 | Test | What I Did | Result |
 |------|------------|--------|
@@ -120,59 +111,3 @@ mysql -u kamailio -p'kamailiorw' -e "USE kamailio; INSERT INTO subscriber (usern
 
 # Start
 sudo systemctl restart kamailio asterisk rtpengine-daemon
-
-
-## 🎯 Test with Softphones
-
-### Test with Linphone (iPhone)
-
-| Setting | Value |
-|---------|-------|
-| SIP URI | `sip:3001@YOUR_IP:5060` |
-| Password | `password123` |
-| Transport | UDP |
-| Media Encryption | Disabled |
-
-### Test with MicroSIP (Windows)
-
-| Setting | Value |
-|---------|-------|
-| SIP Server | `YOUR_IP:5062` |
-| Username | `3003` |
-| Password | `agent3003` |
-| Domain | `YOUR_IP` |
-| Transport | UDP |
-
-### Test Calls
-
-| From | To | Expected Result |
-|------|-----|-----------------|
-| 3001 (Linphone) | 1000 | Hear IVR welcome message |
-| 3001 (Linphone) | 3003 | 3003 rings, answer, audio works |
-| 3003 (MicroSIP) | 3001 | 3001 rings, answer, audio works |
-
----
-
-## 🔮 Phase 2 - What's Next
-
-I'm continuing to build on this project. Here's what I plan to add:
-
-| Feature | Description | Status |
-|---------|-------------|--------|
-| **Full IVR Menu** | "Press 1 for Voice Agent, Press 2 for Network Agent" | 🔜 Planned |
-| **WebRTC Gateway** | Make calls directly from web browser (no app needed) | 🔜 Planned |
-| **Admin Dashboard** | Real-time call monitoring web interface | 🔜 Planned |
-| **Call Recording** | Record calls for quality monitoring | 🔜 Planned |
-| **Queue System** | Multiple agents waiting for calls | 🔜 Planned |
-
-### Why These Features?
-
-| Feature | Why I Want to Build It |
-|---------|------------------------|
-| **WebRTC** | So anyone can call from a browser link |
-| **Dashboard** | To see live calls, agent status, call history |
-| **Queue** | To handle multiple callers efficiently |
-
----
-
-
