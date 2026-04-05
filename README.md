@@ -92,15 +92,20 @@ flowchart TD
 
 ## 📚 What I Learned
 
-| Concept | What I Learned |
-|---------|----------------|
-| **SIP Protocol** | INVITE, ACK, BYE, REGISTER messages |
+| Category | What I Learned |
+|----------|----------------|
+| **Cloud (AWS)** | EC2 instances, security groups, VPC, elastic IPs, cloud networking |
+| **VoIP/SIP** | SIP protocol (INVITE, ACK, BYE, REGISTER), SDP, RTP vs SIP |
 | **SIP Response Codes** | 100 Trying, 180 Ringing, 200 OK, 401 Unauthorized, 404 Not Found |
-| **Kamailio vs Asterisk** | Kamailio for edge routing, Asterisk for PBX features |
-| **RTP vs SIP** | SIP sets up the call, RTP carries the voice |
-| **NAT Traversal** | Why one-way audio happens (private IPs in SDP) |
-| **RTPengine** | Fixes NAT by rewriting SDP and proxying RTP |
-| **Debugging** | sngrep, tcpdump, journalctl, asterisk -r |
+| **Kamailio** | SIP proxy configuration, MySQL integration, NAT handling |
+| **Asterisk** | PBX setup, PJSIP endpoints, dialplan, IVR creation |
+| **RTPengine** | Media proxying, NAT traversal, fixing one-way audio |
+| **Databases** | MySQL user authentication, subscriber tables, HA1 password hashing |
+| **Security** | iptables rules, blocking SIP scanners, port hardening |
+| **Debugging** | sngrep, tcpdump, journalctl, asterisk CLI, log analysis |
+| **Contact Center** | Agent routing (voice agent 3003, network agent 3004), queue concepts, IVR menu design |
+| **Softphones** | Linphone (mobile testing), MicroSIP (Windows testing) |
+| **Linux** | Systemd services, network configuration, file permissions, process management |
 
 ---
 
