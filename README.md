@@ -123,3 +123,58 @@ mysql -u kamailio -p'kamailiorw' -e "USE kamailio; INSERT INTO subscriber (usern
 
 # Start
 sudo systemctl restart kamailio asterisk rtpengine-daemon
+
+
+## 🎯 Test with Softphones
+
+### Test with Linphone (iPhone)
+
+| Setting | Value |
+|---------|-------|
+| SIP URI | `sip:3001@YOUR_IP:5060` |
+| Password | `password123` |
+| Transport | UDP |
+| Media Encryption | Disabled |
+
+### Test with MicroSIP (Windows)
+
+| Setting | Value |
+|---------|-------|
+| SIP Server | `YOUR_IP:5062` |
+| Username | `3003` |
+| Password | `agent3003` |
+| Domain | `YOUR_IP` |
+| Transport | UDP |
+
+### Test Calls
+
+| From | To | Expected Result |
+|------|-----|-----------------|
+| 3001 (Linphone) | 1000 | Hear IVR welcome message |
+| 3001 (Linphone) | 3003 | 3003 rings, answer, audio works |
+| 3003 (MicroSIP) | 3001 | 3001 rings, answer, audio works |
+
+---
+
+
+## 🔮 Phase 2 - What's Next
+
+I'm continuing to build on this project. Here's what I plan to add:
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Full IVR Menu** | "Press 1 for Voice Agent, Press 2 for Network Agent" | 🔜 Planned |
+| **WebRTC Gateway** | Make calls directly from web browser (no app needed) | 🔜 Planned |
+| **Admin Dashboard** | Real-time call monitoring web interface | 🔜 Planned |
+| **Call Recording** | Record calls for quality monitoring | 🔜 Planned |
+| **Queue System** | Multiple agents waiting for calls | 🔜 Planned |
+
+### Why These Features?
+
+| Feature | Why I Want to Build It |
+|---------|------------------------|
+| **WebRTC** | So anyone can call from a browser link |
+| **Dashboard** | To see live calls, agent status, call history |
+| **Queue** | To handle multiple callers efficiently |
+
+---
